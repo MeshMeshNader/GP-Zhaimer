@@ -12,7 +12,7 @@ TOLERANCE = 0.59
 MODEL = 'cnn'  # 'hog' or 'cnn' - CUDA accelerated (if available) deep-learning pretrained model
 
 
-@app.route("/FT", methods=['POST'])
+@app.route("/FaceRecognitionTraining", methods=['POST'])
 def Training_Faces():
     if not request.json or 'urls' not in request.json:
         abort(400)
@@ -43,7 +43,7 @@ def Training_Faces():
     return result_dict
 
 
-@app.route("/FR", methods=['POST'])
+@app.route("/FaceRecognitionTesting", methods=['POST'])
 def Recognize_Face():
     if not request.json or 'encodings' not in request.json:
         abort(400)
@@ -83,4 +83,4 @@ def Recognize_Face():
     return result_dict
 
 
-# app.run(debug=True)
+app.run(debug=True)
