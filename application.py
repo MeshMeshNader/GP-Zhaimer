@@ -51,9 +51,6 @@ def Recognize_Face():
     if not request.json or 'encodings' not in request.json:
         abort(400)
 
-    if not request.json or 'image' not in request.json:
-        abort(400)
-
     if not request.json or 'url' not in request.json:
         abort(400)
 
